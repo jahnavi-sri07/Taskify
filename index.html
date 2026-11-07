@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Taskify - Personal Productivity</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <h2 class="logo">Taskify.</h2>
+
+            <nav class="sidebar-menu">
+
+                <a href="#" class="menu-item active" id="dashboard-menu">Dashboard</a>
+                <a href="#" class="menu-item" id="all-menu">All Tasks</a>
+                <a href="#" class="menu-item" id="pending-menu">Pending</a>
+                <a href="#" class="menu-item" id="completed-menu">Completed</a>
+                <a href="#" class="menu-item" id="calendar-menu">Calendar</a>
+                <a href="#" class="menu-item" id="reminders-menu">Reminders</a>
+                <a href="#" class="menu-item" id="deleted-menu">Recently Deleted</a>
+
+            </nav>
+
+            <div class="sidebar-footer">
+                <p>Your little productivity space 💜</p>
+            </div>
+
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <header class="page-header">
+                <div>
+                    <h1 id="page-title">Welcome Back!</h1>
+                    <p id="page-subtitle">Let's make today productive.</p>
+                </div>
+            </header>
+
+            <!-- Dashboard Summary -->
+            <section class="stats-container page-section" id="dashboard-stats">
+
+                <div class="stat-card">
+                    <h3>Total Tasks</h3>
+                    <p id="total-tasks">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Pending</h3>
+                    <p id="pending-tasks">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Completed</h3>
+                    <p id="completed-tasks">0</p>
+                </div>
+
+            </section>
+
+            <!-- Tasks Page -->
+            <section class="task-section page-section" id="tasks-page">
+
+                <div class="section-heading">
+                    <h2 id="task-heading">My Tasks</h2>
+                    <p id="task-description">Keep track of everything you need to do.</p>
+                </div>
+
+                <!-- Add Task Form -->
+                <div class="add-task-box">
+
+                    <input
+                        type="text"
+                        id="task-input"
+                        placeholder="What do you need to do?"
+                    >
+
+                    <div class="task-date-fields">
+
+                        <label>
+                            Due date
+                            <input type="date" id="due-date-input">
+                        </label>
+
+                        <label>
+                            Reminder
+                            <input type="datetime-local" id="reminder-input">
+                        </label>
+
+                    </div>
+
+                    <button id="add-task-btn">+ Add Task</button>
+
+                </div>
+
+                <div class="task-list" id="task-list"></div>
+
+            </section>
+
+            <!-- Calendar Page -->
+            <section class="calendar-page page-section" id="calendar-page">
+
+                <div class="calendar-top">
+
+                    <button id="previous-month" class="calendar-nav-btn">
+                        &#8592;
+                    </button>
+
+                    <h2 id="calendar-month">November 2026</h2>
+
+                    <button id="next-month" class="calendar-nav-btn">
+                        &#8594;
+                    </button>
+
+                </div>
+
+                <div class="calendar-container">
+
+                    <div class="calendar-weekdays">
+                        <span>Sun</span>
+                        <span>Mon</span>
+                        <span>Tue</span>
+                        <span>Wed</span>
+                        <span>Thu</span>
+                        <span>Fri</span>
+                        <span>Sat</span>
+                    </div>
+
+                    <div class="calendar-grid" id="calendar-grid"></div>
+
+                </div>
+
+                <div class="calendar-details">
+
+                    <h3 id="selected-date-heading">Select a date</h3>
+
+                    <div id="calendar-day-tasks" class="task-list">
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Reminders Page -->
+            <section class="reminders-page page-section" id="reminders-page">
+
+                <div class="section-heading">
+                    <h2>My Reminders 🔔</h2>
+                    <p>Keep important dates and special moments close.</p>
+                </div>
+
+                <div class="notification-settings">
+                    <div>
+                        <h3>Browser Notifications</h3>
+                        <p>Allow Taskify to notify you when a reminder is due.</p>
+                    </div>
+
+                    <button id="enable-notifications-btn">
+                        Enable Notifications
+                    </button>
+                </div>
+
+                <div id="notification-status" class="notification-status">
+                    Notifications have not been enabled yet.
+                </div>
+
+                <div id="reminder-list" class="task-list"></div>
+
+            </section>
+
+            <!-- Recently Deleted Page -->
+            <section class="task-section page-section" id="deleted-page">
+
+                <div class="section-heading">
+                    <h2>Recently Deleted</h2>
+                    <p>Restore your tasks or delete them permanently.</p>
+                </div>
+
+                <div class="task-list" id="deleted-task-list"></div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
